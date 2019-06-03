@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <canvas id="canvas-bg"></canvas>
+    <!--
     <div class="container">
         <div class="div-top">
             <div class="div-top-title">
@@ -38,6 +40,22 @@
 
         </div>
     </div>
+    -->
 </body>
+<script type="module">
+    import { DotParticle } from './js/particle/dot.js'
+    $(function () {
+        let w = $(window).width();
+        let h = $(window).height();
+        $("#canvas-bg").attr('width', w).attr('height', h);
+        var options = {
+            count: w * h / 5000,
+            speed: 0.8,
+            dist: 100
+        }
+        var particle = new DotParticle('canvas-bg');
+        particle.start();
+    })
+</script>
 
 </html>
