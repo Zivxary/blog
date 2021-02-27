@@ -1,0 +1,271 @@
+<html lang="en" class="no-touch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<body>
+    <div class="camera">
+        <div class="space">
+            <div class="box-x">
+                <div class="face-front"></div>
+                <div class="face-behind"></div>
+                <div class="face-left"></div>
+                <div class="face-right"></div>
+                <div class="face-top"></div>
+                <div class="face-bottom"></div>
+                <div class="face-top-left"></div>
+                <div class="face-top-right"></div>
+                <div class="face-bottom-left"></div>
+                <div class="face-bottom-right"></div>
+                <div class="face2-front"></div>
+                <div class="face2-behind"></div>
+                <div class="face2-left"></div>
+                <div class="face2-right"></div>
+                <div class="face2-top"></div>
+                <div class="face2-bottom"></div>
+            </div>
+            <div class="box-y">
+                <div class="face-front"></div>
+                <div class="face-behind"></div>
+                <div class="face-left"></div>
+                <div class="face-right"></div>
+                <div class="face-top"></div>
+                <div class="face-bottom"></div>
+                <div class="face-top-left"></div>
+                <div class="face-top-right"></div>
+                <div class="face-bottom-left"></div>
+                <div class="face-bottom-right"></div>
+                <div class="face2-front"></div>
+                <div class="face2-behind"></div>
+                <div class="face2-left"></div>
+                <div class="face2-right"></div>
+                <div class="face2-top"></div>
+                <div class="face2-bottom"></div>
+            </div>
+            <div class="box-z">
+                <div class="face-front"></div>
+                <div class="face-behind"></div>
+                <div class="face-left"></div>
+                <div class="face-right"></div>
+                <div class="face-top"></div>
+                <div class="face-bottom"></div>
+                <div class="face-top-left"></div>
+                <div class="face-top-right"></div>
+                <div class="face-bottom-left"></div>
+                <div class="face-bottom-right"></div>
+                <div class="face2-front"></div>
+                <div class="face2-behind"></div>
+                <div class="face2-left"></div>
+                <div class="face2-right"></div>
+                <div class="face2-top"></div>
+                <div class="face2-bottom"></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        @keyframes s {
+            0% {
+                transform: rotateY(0) rotateX(0);
+            }
+
+            100% {
+                transform: rotateY(-359.9deg) rotateX(359.9deg);
+            }
+        }
+    </style>
+    <style>
+        .camera {
+            width: 600px;
+            height: 600px;
+            margin: auto auto;
+            perspective-origin: 50% 50%;
+            perspective: 600px;
+        }
+
+        .space {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform-origin: center center -50px;
+            animation: s 15s linear infinite;
+        }
+
+        .space div,
+        .space div::before,
+        .space div::after {
+            position: absolute;
+            content: "";
+        }
+
+        .box-y {
+            transform: translateX(300px) translateY(0px) translateZ(-300px) rotateX(90deg) rotateY(90deg);
+            transform-style: preserve-3d;
+        }
+
+        .box-z {
+            transform: translateX(600px) translateY(300px) translateZ(-300px) rotateX(90deg) rotateZ(90deg);
+            transform-style: preserve-3d;
+        }
+
+        .face-front {
+            width: 450px;
+            height: 150px;
+            background-color: hsl(43, 89%, 38%);
+            transform: translateX(75px) translateY(225px) translateZ(75px);
+        }
+
+        .face-front::before {
+            width: 390px;
+            top: 150px;
+            left: 0;
+            border-width: 30px;
+            border-style: solid;
+            border-color: hsl(43, 89%, 38%) transparent transparent;
+        }
+
+        .face-front::after {
+            width: 390px;
+            top: -60px;
+            left: 0;
+            border-width: 30px;
+            border-style: solid;
+            border-color: transparent transparent hsl(43, 89%, 38%);
+        }
+
+        .face-behind {
+            width: 450px;
+            height: 150px;
+            background-color: hsl(43, 89%, 38%);
+            transform: translateX(75px) translateY(225px) translateZ(-75px);
+        }
+
+        .face-behind::before {
+            width: 390px;
+            top: 150px;
+            left: 0;
+            border-width: 30px;
+            border-style: solid;
+            border-color: hsl(43, 89%, 38%) transparent transparent;
+        }
+
+        .face-behind::after {
+            width: 390px;
+            top: -60px;
+            left: 0;
+            border-width: 30px;
+            border-style: solid;
+            border-color: transparent transparent hsl(43, 89%, 38%);
+        }
+
+        .face-left {
+            width: 150px;
+            height: 150px;
+            transform: translateX(0px) translateY(225px) rotateY(90deg);
+            background-color: hsl(43, 89%, 35%);
+        }
+
+        .face-right {
+            width: 150px;
+            height: 150px;
+            transform: translateX(450px) translateY(225px) rotateY(90deg);
+            background-color: hsl(43, 89%, 35%);
+        }
+
+        .face-top {
+            width: 390px;
+            height: 150px;
+            transform: translateX(105px) translateY(120px) rotateX(90deg);
+            background-color: hsl(43, 89%, 35%);
+        }
+
+        .face-top-left {
+            width: 42.42640687px;
+            height: 150px;
+            top: 135px;
+            left: 68.78679656px;
+            background-color: hsl(43, 89%, 41%);
+            transform: rotateX(90deg) rotateY(-45deg);
+        }
+
+        .face-top-right {
+            width: 42.42640687px;
+            height: 150px;
+            top: 135px;
+            left: 488.78679656px;
+            background-color: hsl(43, 89%, 41%);
+            transform: rotateX(90deg) rotateY(45deg);
+        }
+
+        .face-bottom {
+            width: 390px;
+            height: 150px;
+            transform: translateX(105px) translateY(330px) rotateX(90deg);
+            background-color: hsl(43, 89%, 35%);
+        }
+
+        .face-bottom-left {
+            width: 42.42640687px;
+            height: 150px;
+            top: 315px;
+            left: 68.78679656px;
+            background-color: hsl(43, 89%, 41%);
+            transform: rotateX(90deg) rotateY(45deg);
+        }
+
+        .face-bottom-right {
+            width: 42.42640687px;
+            height: 150px;
+            top: 315px;
+            left: 488.78679656px;
+            background-color: hsl(43, 89%, 41%);
+            transform: rotateX(90deg) rotateY(-45deg);
+        }
+
+        .face2-front {
+            width: 300px;
+            height: 300px;
+            background-color: hsl(51, 79%, 55%);
+            transform: translateX(150px) translateY(150px) translateZ(40px);
+        }
+
+        .face2-behind {
+            width: 300px;
+            height: 300px;
+            background-color: hsl(51, 79%, 55%);
+            transform: translateX(150px) translateY(150px) translateZ(-40px);
+        }
+
+        .face2-left {
+            width: 80px;
+            height: 300px;
+            background-color: hsl(51, 79%, 55%);
+            transform: translateX(110px) translateY(150px) rotateY(90deg);
+        }
+
+        .face2-right {
+            width: 80px;
+            height: 300px;
+            background-color: hsl(51, 79%, 55%);
+            transform: translateX(410px) translateY(150px) rotateY(90deg);
+        }
+
+        .face2-top {
+            width: 300px;
+            height: 80px;
+            background-color: hsl(51, 79%, 55%);
+            transform: translateX(150px) translateY(410px) rotateX(90deg);
+        }
+
+        .face2-bottom {
+            width: 300px;
+            height: 80px;
+            background-color: hsl(51, 79%, 55%);
+            transform: translateX(150px) translateY(110px) rotateX(90deg);
+        }
+    </style>
+</body>
+
+</html>
